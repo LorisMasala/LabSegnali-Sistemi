@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{amsmath, amssymb, mathtools}
+
+\usepackage{graphicx}
+\usepackage{textgreek}
+\usepackage{nicefrac}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{capt-of}
+\usepackage{cancel} % for strike-through
+\usepackage{booktabs} % Linee orizzontali per tabelle ( \toprule \midrule \bottomrule )
+\usepackage[font=small]{caption}
+\usepackage[left=3.5cm, right=3.5cm]{geometry}
+\usepackage[colorlinks=true, urlcolor=green]{hyperref} %per far si' che \ref reindirizzi al riferimento
+\usepackage[version=4,arrows=pgf-filled,textfontname=sffamily,mathfontname=mathsf]{mhchem}
+\usepackage{footnote}
+\makesavenoteenv{figure}
+\usepackage{float}
+\usepackage{threeparttable} % per tabelle con note a piè di pagina
+
+\usepackage{siunitx}
+\DeclareSIUnit\calorie{cal} % Definisco caloria
+\sisetup{
+  output-decimal-marker = {.},
+  separate-uncertainty = true,
+  table-align-uncertainty = true,
+}
+\newcommand{\interval}[3]{da \SI{#1}{#3} a \SI{#2}{#3}}
+
+%Librerie per gestire elenchi (per bibliografia)
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\usepackage{csquotes} % dipendenza di biblatex
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  sorting=ynt
+]{biblatex}
+\addbibresource{bib.bib}
+\AtBeginBibliography{\small}
+
+\usepackage{comment}
+
+%Comandi specifici per la relazione corrente
+\newcommand{\ie}{\emph{i.e.}~}
+\newcommand{\eg}{\emph{e.g.}~}
+\newcommand{\therm}{\text{th}}
+\newcommand{\paragrafo}[1]{\S\ref{#1}}
+
+
+%Spazi tra tabelle e testo
+\setlength{\textfloatsep}{1cm} % spazio tra tabelle e testo
+\setlength{\floatsep}{1cm}      % spazio tra due tabelle consecutive
+
+\usepackage[european]{circuitikz} % Oppure [american]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage{xfp} % Pacchetto per calcoli matematici
+
+% Comando automatico per calcolare Z-score e verificare compatibilità
+\newcommand{\zcheck}[3]{%
+  \edef\zval{\fpeval{round(abs((#2) - (#1)) / (#3), 2)}}%
+  $Z = \zval \implies \ifnum\fpeval{\zval > 2}=1 \text{NO}\else \text{OK}\fi$%
+}
+
+% Comando per l'inserimento automatico dell'intera riga
+% Sintassi: \riga{Grandezza}{V_teorico}{V_misurato}{Incertezza}
+\newcommand{\riga}[4]{%
+  #1 & #2 & #3 & #4 & \zcheck{#2}{#3}{#4} \\
+}
+
+\title{Esercitazione n.4+5}
+\author{Lorenzo Girella, Aurora Lippi, Loris Masala}
+\date{9 novembre 2026, Canale 2}
+
+\begin{document}
+
+\maketitle
+
+\end{document}

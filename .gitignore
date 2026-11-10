@@ -1,0 +1,41 @@
+# File ausiliari di compilazione (LaTeX)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.cb
+*.cb2
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# Indici e glossari
+*.idx
+*.ind
+*.ilg
+*.glo
+*.acn
+*.acr
+*.alg
+*.ist
+
+# File generati da minted (evidenziazione del codice)
+_minted-*/
+*.pyg
+
+# Editor e IDE specifici
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+.DS_Store
+Thumbs.db
